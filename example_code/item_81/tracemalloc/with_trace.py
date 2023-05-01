@@ -16,6 +16,7 @@
 
 import tracemalloc
 
+# set maximum stack depth
 tracemalloc.start(10)
 time1 = tracemalloc.take_snapshot()
 

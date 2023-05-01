@@ -29,3 +29,7 @@ def compute_variance(data):
 def compute_stddev(data):
     variance = compute_variance(data)
     return math.sqrt(variance)
+
+# import my_module;
+# my_module.compute_stddev([5])
+# import pdb; pdb.pm()

@@ -32,3 +32,5 @@ result = compute_rmse(
     [1.8, 1.7, 3.2, 7j],  # Bad input
     [2, 1.5, 3, 5])
 print(result)
+
+# python -m pdb -c continue XXX.py

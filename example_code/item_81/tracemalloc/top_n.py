@@ -27,3 +27,7 @@ time2 = tracemalloc.take_snapshot()        # After snapshot
 stats = time2.compare_to(time1, 'lineno')  # Compare snapshots
 for stat in stats[:3]:
     print(stat)
+
+# waste_memory.py:22: size=2392 KiB (+2392 KiB), count=29992 (+29992), average=82 B
+# waste_memory.py:27: size=547 KiB (+547 KiB), count=10001 (+10001), average=56 B
+# waste_memory.py:28: size=82.8 KiB (+82.8 KiB), count=100 (+100), average=848 B

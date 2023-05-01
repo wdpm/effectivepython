@@ -80,10 +80,10 @@ def print_distance(speed, duration, *,
                    speed_units='mph',
                    time_units='hours',
                    distance_units='miles'):
-    norm_speed = convert(speed, speed_units)
-    norm_duration = convert(duration, time_units)
-    norm_distance = norm_speed * norm_duration
-    distance = localize(norm_distance, distance_units)
+    norm_speed = convert(speed, speed_units) # m/s
+    norm_duration = convert(duration, time_units) # s
+    norm_distance = norm_speed * norm_duration # m
+    distance = localize(norm_distance, distance_units) # m => miles
     print(f'{distance} {distance_units}')
 
 
@@ -151,8 +151,7 @@ def print_distance(speed, duration, *,
                    distance_units=None):
     speed_units = require('speed_units', speed_units, 'mph')
     time_units = require('time_units', time_units, 'hours')
-    distance_units = require(
-        'distance_units', distance_units, 'miles')
+    distance_units = require('distance_units', distance_units, 'miles')
 
     norm_speed = convert(speed, speed_units)
     norm_duration = convert(duration, time_units)
@@ -171,10 +170,12 @@ with contextlib.redirect_stderr(fake_stderr):
                    speed_units='meters',
                    time_units='seconds')
 
+print("Example 8")
 print(fake_stderr.getvalue())
 
 
 # Example 9
+# treat warning as error level
 warnings.simplefilter('error')
 try:
     warnings.warn('This usage is deprecated',

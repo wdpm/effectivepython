@@ -17,6 +17,7 @@
 
 
 # Example 17
+# ignore SecondClass parsing
 from __future__ import annotations
 
 class FirstClass:
